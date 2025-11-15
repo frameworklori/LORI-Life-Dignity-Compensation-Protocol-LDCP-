@@ -1,4 +1,4 @@
-README.md — LORI-Life Dignity Compensation Protocol (LDCP)
+# README.md — LORI-Life Dignity Compensation Protocol (LDCP)
 
 生命尊嚴賠償協議（中英對照版）
 © 2025 LORI Ethical System – All Rights Reserved
