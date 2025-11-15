@@ -5,6 +5,23 @@ README.md — LORI-Life Dignity Compensation Protocol (LDCP)
 
 ⸻
 
+📘 What is LDCP?（簡單版導言）
+
+EN
+The LORI-Life Dignity Compensation Protocol (LDCP) is a practical framework for companies, governments, hospitals, and organizations to follow when a major accident or fatal incident occurs.
+It provides a clear, humane 4-stage process: immediate support, moral accountability, safety reform, and fair family-based compensation.
+
+LDCP is not a legal requirement. It is a humane, ethical guideline designed to rebuild trust, protect dignity, and help society handle tragic events responsibly.
+
+中
+LORI 生命尊嚴賠償協議（LDCP）是一套提供給企業、政府、醫療機構等使用的「實務處理框架」，用於發生重大事故或死亡事件時，指引如何以最有尊嚴與最有道德的方式處理。
+
+它提供一條 清楚、人性化的四階段流程：
+即時援助 → 承擔責任 → 安全改善 → 公平賠償。
+
+LDCP 不是法律義務，是一套人性化與倫理性的指引，用來重建信任、維護尊嚴，並負責任地處理生命相關事件。
+--------
+
 📘 Overview｜概述
 
 EN
