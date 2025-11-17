@@ -1,4 +1,4 @@
-LICENSE — LORI Public Attribution License v1.1
+# LICENSE — LORI Public Attribution License v1.1
 
 © 2025 LORI Framework — All Rights Reserved
 
