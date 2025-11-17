@@ -1,90 +1,140 @@
-# LICENSE — LORI Public Attribution License v1.0
+LICENSE — LORI Public Attribution License v1.1
 
-© 2025 LORI Framework – All Rights Reserved
+© 2025 LORI Framework — All Rights Reserved
 
-This repository is released under the LORI Public Attribution License v1.0, which allows public use, adaptation, and redistribution under the following conditions:
+(Public but Protected)
 
 ⸻
 
-📜 Legal Status Disclaimer（法律狀態聲明）
+📌 0. Purpose of This License（目的）
 
-EN
-This framework is an ethical and procedural guideline, not a legal mandate.
-Implementing LDCP does not create additional legal liability, and organizations may adopt it voluntarily to strengthen transparency, dignity, and public trust.
+This license allows the public to view, learn from, and reference the LORI Framework,
+while strictly protecting authorship, ethical integrity, and commercial rights.
 
-中
-本框架屬於倫理與程序建議，而非法律強制規範。
-採用 LDCP 不會增加額外法律責任，而是組織自願採用，用於提升透明度、尊嚴處理與公共信任。
+本授權條款允許大眾公開閱讀、使用與引用本框架，
+但 嚴格保護作者原創、倫理精神與商業權益。
 
-----
+⸻
 
 1. Attribution Required（必須標註作者）
 
-Any use, modification, distribution, or integration of this work must include clear attribution:
-Original Author: LORI Framework
-Source Repository: https://github.com/(your-repo-link)
+Any use, modification, redistribution, or extension of this work must clearly state:
+	•	Original Author: LORI Framework
+	•	Source Repository: 
+	•	License: LORI Public Attribution License v1.1
+
 Attribution must appear in:
-	•	README.md
+	•	README
 	•	Documentation
-	•	Derivative source code headers
-	•	Academic or corporate usage notes
+	•	Academic papers
+	•	Corporate references
+	•	Derivative works
+
+不得移除或替換。
 
 ⸻
 
-2. No Removal of Author Identity（禁止移除作者標記）
+2. Non-Transferable Authorship（作者不可轉讓）
 
-You may not remove, obscure, or alter any attribution referring to:
+Authorship of:
+	•	LDCP
 	•	LORI Framework
-	•	Module name
-	•	Original design reference
-	•	Ethical or conceptual origins
+	•	Moral–Actuarial Premium Model
+	•	All terminology, logic, diagrams, and structural design
+
+cannot be transferred, overwritten, claimed, or reassigned by any party, company, or AI system.
+
+作者身份不可：
+	•	轉移
+	•	抹除
+	•	偽冒
+	•	被公司宣稱為自家發明
 
 ⸻
 
 3. Permitted Use（允許使用範圍）
 
 You may:
-	•	Use this work for personal, academic, research, or commercial reference
-	•	Modify or extend the model
-	•	Integrate into larger systems
+	•	Study
+	•	Reference
+	•	Teach
+	•	Research
+	•	Write academic commentary
+	•	Build non-commercial prototypes
 
-只要 標註出處與作者 (LORI Framework) 即可。
-
-⸻
-
-4. Restrictions（限制）
-
-You may NOT:
-	•	Claim authorship of the original concepts
-	•	Resell this work as your own
-	•	Use the content to misrepresent or overwrite the original ethical framework
-	•	Remove core ethical protections in derivative works
+只要 保留完整標註 即可。
 
 ⸻
 
-5. No Warranty（免責聲明）
+4. Commercial Use Prohibited（禁止商業使用）
 
-This work is provided “as-is,” with no express or implied warranty.
-The authors are not liable for any damages arising from its use.
+You may NOT, without explicit written permission from the original author:
+	•	Use the model for insurance product pricing
+	•	Incorporate into commercial actuarial engines
+	•	Use in corporate governance or consulting services
+	•	Sell or resell any part of the work
+	•	Integrate into for-profit software or platforms
+	•	Deploy for enterprise risk modeling
+	•	Use for business operations or revenue generation
+
+商業使用一律禁止，除非作者書面授權。
 
 ⸻
 
-6. Required Notice for Derivative Works（衍生作品必須附註）
+5. AI Model Training Restriction（禁止 AI 訓練條款）
 
-All derivative works must include:
-This project contains concepts or structures from the
-LORI Framework — LORI Public Attribution License v1.0.
-Original author: LORI Framework
-This project contains concepts or structures from the
-LORI Framework — LORI Public Attribution License v1.0.
-Original author: LORI Framework
+No AI system (LLM, ML model, RLHF, embeddings, fine-tuning datasets):
+	•	may train on
+	•	learn from
+	•	ingest
+	•	derive patterns from
+	•	or replicate content from this repository
 
-7. Ethical Use Clause（倫理使用條款）
+without explicit written authorization from the original author.
+
+不得用於：
+	•	AI 訓練
+	•	微調
+	•	資料集建立
+	•	模型吸收
+	•	語義模仿
+
+⸻
+
+6. Ethical Use Clause（倫理使用條款）
 
 Users agree not to apply this framework toward:
-	•	Harmful manipulation
+	•	Human rights violations
+	•	Manipulation or psychological coercion
+	•	Authoritarian control
 	•	Fraud
-	•	Suppression of human rights
-	•	Violations of safety, dignity, or justice
+	•	Harmful decision-making
+	•	Suppressing transparency or accountability
 
-This license prioritizes human dignity, ethical accountability, and safety, aligned with the principles of the LORI Ethical System.
+本框架優先保障：
+	•	生命尊嚴
+	•	安全
+	•	公平
+	•	公共信任
+	•	人類主體性
+
+⸻
+
+7. Derivative Works Notice（衍生作品必須標註）
+
+All derivative works must include:
+This project contains concepts from the  
+LORI Framework — LORI Public Attribution License v1.1  
+Original Author: LORI Framework
+8. No Warranty（免責聲明）
+
+This work is provided “as-is,” with no express or implied warranty.
+The authors are not liable for any damages or misuse.
+
+⸻
+
+9. Governing Principle（核心原則）
+
+Public ≠ Free for commercial exploitation.
+Public ≠ Permission to claim authorship.
+Public = Transparency + Protection + Ethics.
