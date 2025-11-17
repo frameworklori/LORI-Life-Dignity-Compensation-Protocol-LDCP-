@@ -1,10 +1,4 @@
-⭐ LDCP Premium Adjustment Model v1.0
-
-(GitHub-ready Markdown)
-
-⸻
-
-LDCP Premium Adjustment Model v1.0
+#  LDCP Premium Adjustment Model v1.0
 
 Life Dignity Compensation Protocol — Ethical Premium Adjustment Framework
 
@@ -78,6 +72,7 @@ It quantifies:
 	•	Public and family communication quality
 
 The result becomes a measurable discount or surcharge.
+
 
 Example scoring → discount mapping:
 LDCP Score (0–100)
