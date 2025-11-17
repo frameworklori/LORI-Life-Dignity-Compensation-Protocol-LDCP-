@@ -75,24 +75,14 @@ The result becomes a measurable discount or surcharge.
 
 
 Example scoring → discount mapping:
-LDCP Score (0–100)
-Adjustment Factor
-Meaning
-90–100
-0.70
-Strong ethics & safety → premium -30%
-70–89
-0.90
-Moderate compliance → premium -10%
-50–69
-1.00
-No discount
-30–49
-1.20
-Low transparency → premium +20%
-0–29
-1.50
-High-risk behavior → premium +50%
+
+| LDCP Score (0–100) | Adjustment Factor |Meaning|
+|---|---|---|
+|90–100|0.70|Strong ethics & safety → premium -30%|
+|70–89|0.90|Moderate compliance → premium -10%|
+|50–69|1.00|No discount
+|30–49|1.20|Low transparency → premium +20%|
+|0–29|1.50|High-risk behavior → premium +50%|
 
 Formula:
 Final Premium = Base Premium × Technical Risk Factor × Ethical/Safety Adjustment ⭐ 3. Why This Model Does NOT Replace Base Premium
@@ -185,24 +175,13 @@ LDCP 模組的創新要素。
 
 分數 → 折扣對應如下：
 
-LDCP 分數
-折扣係數
-說明
-90–100
-0.70
-高透明度 → 保費 -30%
-70–89
-0.90
-中度透明 → 保費 -10%
-50–69
-1.00
-無折扣
-30–49
-1.20
-低透明度 → 保費 +20%
-0–29
-1.50
-高風險行為 → 保費 +50%
+| LDCP 分數 (0–100) | 折扣係數|說明|
+|---|---|---|
+|90–100|0.70|高透明度 → 保費 -30%|
+|70–89|0.90|中度透明 → 保費 -10%|
+|50–69|1.00|無折扣|
+|30–49|1.20|低透明度 → 保費 +20%|
+|0–29|1.50|高風險行為 → 保費 +50%|
 
 最終公式：
 
