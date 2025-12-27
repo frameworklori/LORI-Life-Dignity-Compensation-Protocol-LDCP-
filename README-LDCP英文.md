@@ -4,7 +4,7 @@
 ## 📌 Project Background
 As Artificial General Intelligence (AGI) expands at an unprecedented pace, traditional social safety nets are failing to address the "Skill Flash-Crash" and the rapid devaluation of digital labor. The current global surge in coding and mathematics education often leads individuals into a "Anxiety Trap"—where the rate of learning is slower than the rate of technological obsolescence.
 
-**LDCP (LORI-Life Dignity Compensation Protocol)** is an original conceptual framework proposed by **[Your Name]**. Built upon the **ODRAF** architecture, it is designed to predict, prevent, and compensate for the erosion of human dignity caused by the unchecked advancement of AI.
+**LDCP (LORI-Life Dignity Compensation Protocol)** is an original conceptual framework proposed by **Lori framework**. Built upon the **ODRAF** architecture, it is designed to predict, prevent, and compensate for the erosion of human dignity caused by the unchecked advancement of AI.
 
 ---
 
