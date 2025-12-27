@@ -4,7 +4,7 @@
 ## 📌 項目背景 (Project Background)
 在 AGI (通用人工智慧) 快速擴張的當代，傳統的社會保障體系已無法應對「技能閃崩」與「數位勞動貶值」帶來的衝擊。大眾盲目投入 Coding 與數學教育，往往陷入「學習速度低於技術淘汰速度」的焦慮陷阱。
 
-**LDCP (LORI-Life Dignity Compensation Protocol)** 由 **[Your Name]** 原創提出，旨在透過 **ODRAF** 框架，預防並補償因 AI 技術失控發展而導致的人類尊嚴流失。
+**LDCP (LORI-Life Dignity Compensation Protocol)** 由 **Lori framework** 原創提出，旨在透過 **ODRAF** 框架，預防並補償因 AI 技術失控發展而導致的人類尊嚴流失。
 
 ---
 
