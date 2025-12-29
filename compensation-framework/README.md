@@ -1,5 +1,5 @@
 
-## LDPC: Life Dignity Compensation Protocol
+# LDPC: Life Dignity Compensation Protocol
 A Structural Framework for Systemic Stability during Technological Transitions
 
 #🚩 IMPORTANT: DISCLAIMER & ROLE BOUNDARY
