@@ -2,7 +2,7 @@
 # LDPC: Life Dignity Compensation Protocol
 A Structural Framework for Systemic Stability during Technological Transitions
 
-#🚩 IMPORTANT: DISCLAIMER & ROLE BOUNDARY
+# 🚩 IMPORTANT: DISCLAIMER & ROLE BOUNDARY
 
 This repository contains a conceptual framework, not a policy mandate.
 1. Nature of Framework: LDPC is a study in Institutional Reliability Engineering. It defines design options for survivable transition mechanisms during large-scale technological disruption (e.g., AI-driven labor shifts).
