@@ -163,6 +163,12 @@ All audits rely on decentralized or aggregated data, explicitly rejecting indivi
 	•	Prevents tech-driven growth from extracting value from ordinary people’s past labor
 (e.g., savings erosion, fixed-interest exposure)
 
+UBI-Stable(Layer 0-Cash Floor)
+->Prevents income discontinuity
+LDPC-Interest Relief(Layer 1-Interest Relief)
+->Prevents debt amplification
+The two combined constitute a complete system for preventing bank bad debts.
+
 ⸻
 
 📄 License & Usage
