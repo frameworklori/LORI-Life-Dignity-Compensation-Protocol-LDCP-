@@ -182,3 +182,4 @@ Original Statement: 2025-06-16
 UBI prevents starvation.
 LDPC prevents dignity collapse.
 Together, they prevent technological progress from becoming social fracture.
+UBI_Stable is not income replacement. it is a minimum liquidity stabilizer to prevent default cascades.
