@@ -155,8 +155,11 @@ LDPC 不得成為監控或服從系統。
 
 🏗 設計原則
 1. 生存是權利；尊嚴是基線
-   - UBI 維護生存
-   - LDPC 維護尊嚴  
+   - UBI 生存危教
+     UBI-Stable(Layer 0-Cash Floor) -> 防止income discountinuity
+   - LDPC 維護尊嚴
+   - LDPC降息減壓(Layer 1- interest Relief) -> 防止debt amplification
+
 2. 精準冷卻，而非大規模再分配
    - 將高風險的結構性壓力視為「穩定成本」，而非「道德失敗」
 3. 非掠奪式科技發展
@@ -170,6 +173,7 @@ LDPC 不得成為監控或服從系統。
 本框架以「現狀」提供，用於研究、政策設計與系統探索。
 
 實際採用與落地實施的決策，仍取決於具體脈絡與個別機構。
+
 - LDPC LORI – 生命尊嚴補償協議  
   原始聲明日期：2025-11-15
 - ODRAF – Outcome-Driven Risk Anticipation Framework（成果導向風險預判框架）  
@@ -180,5 +184,6 @@ LDPC 不得成為監控或服從系統。
 🧾 結語
 
 UBI 防止飢餓。
-LDPC 防止尊嚴崩潰。
+LDPC 防止尊嚴崩潰。(銀行、政府的呆帳產生)
 兩者結合，防止科技進步演變成社會斷裂。
+UBI-Stable 並非收入替代方案。它是一種最低限度的流動性穩定，旨在防止違約風險的連鎖反應。
