@@ -17,7 +17,7 @@ Function: Provides unconditional material baseline for all citizens, ensuring ba
 Layer 1: High-Stress Compensation Layer
 
 Core: Interest relief for high-debt unemployed individuals
-Function: Provides structured interest subsidies for groups who become unemployed due to technological progress and carry high financial leverage (mortgages, debts). This serves as a "cooling mechanism" to prevent violent social unrest
+Function: Provides non-market interest decompression tools for groups who become unemployed due to technological progress and carry high financial leverage (mortgages, debts). This serves as a "cooling mechanism" to prevent violent social unrest
 Layer 2: Conditional Transition Layer
 
 Core: Transition pathway incentives
