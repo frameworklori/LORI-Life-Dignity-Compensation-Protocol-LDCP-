@@ -1,6 +1,6 @@
 LDPC LORI – Life Dignity Compensation Protocol
 
-v2.0.1 — Integrated UBI Stable Version
+v2.0.2 — Integrated UBI Stable Version
 
 ⸻
 
@@ -12,9 +12,9 @@ It integrates:
 	•	Universal survival guarantees (UBI)
 	•	Targeted, non-market structural pressure relief
 
-to ensure that technological progress does not come at the cost of human dignity, social order, or democratic stability.
+to ensure technological progress does not come at the cost of human dignity, social order, or democratic stability.
 
-LDPC is not a welfare expansion, not a macro interest rate policy, and not a market stimulus.
+LDPC is not a welfare expansion, not a macro interest-rate policy, and not a capital stimulus tool.
 It is a social shock-absorption protocol engineered to prevent dignity collapse during systemic technological displacement.
 
 ⸻
@@ -28,6 +28,7 @@ LDPC employs a four-layer architecture, establishing a buffer zone from survival
 Layer 0 – Universal Survival Layer (UBI)
 
 Core: Universal Basic Income (UBI)
+
 Function:
 Provides an unconditional material baseline for all citizens, ensuring that basic survival is not threatened during waves of technological unemployment or labor displacement.
 	•	No conditions
@@ -88,7 +89,7 @@ No substitution for public responsibility.
 💰 Affordability Model
 
 Funding Source:
-Financed by excess profits generated through technological advancement, including:
+Financed by excess value generated through technological advancement, including:
 	•	AI-related taxation
 	•	Automation dividends
 	•	Productivity windfalls
@@ -100,9 +101,26 @@ Interest Adjustment Logic:
 Layer 1 activation dynamically adjusts interest relief ratios based on:
 	•	Technological unemployment rates
 	•	Debt default risk indicators
-	•	Aggregate financial stress signals
+	•	Aggregated financial stress signals
 
-This ensures anti-cyclical stabilization without capital expansion.
+This enables anti-cyclical stabilization without capital expansion.
+
+⸻
+
+Algorithmic Stability Dividend (ASD)
+
+LDPC recognizes that maintaining social stability during rapid technological deployment generates a measurable risk-reduction dividend for technology-driven organizations.
+
+The Algorithmic Stability Dividend (ASD) is defined as:
+	•	Reduced probability of regulatory backlash
+	•	Lower litigation and compliance escalation risk
+	•	Improved long-term operating continuity under democratic systems
+
+ASD is not a financial payout and does not represent profit sharing.
+It is a risk-adjusted stability benefit that justifies corporate participation within the C₍cap₎ exposure framework.
+
+Stability is not a reward for technology.
+It is a cost of operating within a democratic society.
 
 ⸻
 
@@ -142,7 +160,8 @@ All audits rely on decentralized or aggregated data, explicitly rejecting indivi
 	2.	Precision cooling over mass redistribution
 	•	High-risk structural pressure is treated as a stability cost, not a moral failure
 	3.	Non-predatory technological development
-	•	Prevents tech-driven growth from extracting value from ordinary people’s past labor (e.g., savings, fixed-interest exposure)
+	•	Prevents tech-driven growth from extracting value from ordinary people’s past labor
+(e.g., savings erosion, fixed-interest exposure)
 
 ⸻
 
@@ -158,7 +177,7 @@ Original Statement: 2025-06-16
 
 ⸻
 
-Closing Statement
+🧾 Closing Statement
 
 UBI prevents starvation.
 LDPC prevents dignity collapse.
