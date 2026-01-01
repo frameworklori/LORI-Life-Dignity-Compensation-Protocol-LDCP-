@@ -56,11 +56,6 @@ By defining a predictable expenditure cap (C_cap), the framework functions as a 
 
 ---
 
-## 6. Interpretation Rule
-
-This model evaluates **affordability and downside containment**, not obligation.
-
----
 ## 6. Financial Stability Rationale
 
 The combined effect of UBI-Stable (Layer 0) and Interest Relief (Layer 1) functions as a
@@ -77,3 +72,9 @@ This structure reduces:
 From a macro-financial perspective, UBI-Stable operates as a
 **pre-default liquidity buffer**, lowering tail-risk exposure for financial institutions.
 **End of Model**
+
+## 7. Interpretation Rule
+
+This model evaluates **affordability and downside containment**, not obligation.
+
+---
