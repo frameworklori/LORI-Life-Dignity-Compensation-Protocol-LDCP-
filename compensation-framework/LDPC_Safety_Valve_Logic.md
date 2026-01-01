@@ -44,4 +44,14 @@ Triggers are based on **system performance**, not individual behavior.
 
 ---
 
+6.Priority Reallocation Rule
+
+When Safety Valve conditions are triggered:
+
+- Reallocated funds from Layer 1 **must first reinforce Layer 0 UBI-Stable capacity**
+  before expanding other public investments.
+
+This ensures that during institutional failure or pathway congestion,
+liquidity stabilization precedes infrastructure expansion.
+
 **End of Safety Valve Logic**
