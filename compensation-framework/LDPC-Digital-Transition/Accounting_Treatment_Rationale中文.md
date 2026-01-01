@@ -2,7 +2,7 @@
 ## 為何 LDPC 必須被設計為可控、可稅前扣除的營運費用
 
 ### 1. 本文件目的
-本文件旨在釐清 LDPC（Life Dignity Compensation Protocol，生命尊嚴補償協議）的設計背後之會計與財務理據。  
+本文件旨在釐清 LDPC（Life Dignity Compensation Protocol，生命尊嚴補償協議）的設計背後之會計與財務依據。  
 LDPC 並非補償方案、責任清償或損害賠償機制。  
 它是一種結構性的風險管理框架，旨在將不可預測的系統性風險轉化為可預測、可編列預算的營運成本。
 
