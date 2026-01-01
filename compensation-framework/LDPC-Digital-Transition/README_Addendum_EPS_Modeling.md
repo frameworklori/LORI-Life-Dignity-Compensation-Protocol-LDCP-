@@ -65,5 +65,4 @@ It simply ensures that systemic transition costs do not manifest as uncontrolled
 
 ### 6. Summary Statement
 
-Only ethics that can be absorbed by financial systems can survive institutional reality.
-EPS modeling is not cynicism; it is survivability engineering.
+Only ethical principles that can be absorbed by the financial system can be implemented under real-world institutions. Earnings per share modeling is not realism, but rather a reconstruction of viability.
