@@ -12,11 +12,17 @@ Teach individuals how to:
 
 ## Coordinate AI tools
 -Design agent (Agent) workflows
+
 -Apply AI to engineering and non-engineering roles
+
 -Use AI to create added value (at the application level)
+
 -The math/science skills, coding/building ability, certification assessments, etc. needed in the AI era
+
 -The introspection, critical thinking, responsibility/risk-taking, integration, decision-making abilities, etc. needed in the AI era
+
 -Job role introductions needed in the AI era (including descriptions of tasks and responsibilities)
+
 -Successful transformation cases using AI (becoming an independent creator, inspirational cases)
 
 This can reduce friction in transition, but does not redefine the job market.
