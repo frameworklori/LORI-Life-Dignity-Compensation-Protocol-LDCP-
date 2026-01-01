@@ -84,4 +84,20 @@ This separation prevents:
 
 ---
 
+### Layer 0 — Universal Public Investment & UBI-Stable Floor (Fixed)
+
+Layer 0 consists of two complementary components:
+
+1. **Public Infrastructure Investment**  
+   (education, libraries, tuition reduction, digital access)
+
+2. **UBI-Stable Liquidity Floor**  
+   A low-level, fixed, unconditional cash flow designed to:
+   - maintain minimum debt-servicing capacity,
+   - prevent sudden income discontinuity,
+   - stabilize household cash flow during transition periods.
+
+UBI-Stable is intentionally calibrated **below living wage levels** and exists solely as a
+**financial stability instrument**, not a livelihood substitute.
+
 **End of Framework**
