@@ -71,7 +71,7 @@ This structure reduces:
 
 From a macro-financial perspective, UBI-Stable operates as a
 **pre-default liquidity buffer**, lowering tail-risk exposure for financial institutions.
-**End of Model**
+
 
 ## 7. Interpretation Rule
 
