@@ -1,6 +1,6 @@
-## LDPC Use Cases (Non-exhaustive List)
+# LDPC Use Cases (Non-exhaustive List)
 
-Use Case 1: Open AI Skills Education (Open video platform resource-sharing model—as an AI skills training platform)
+## Use Case 1: Open AI Skills Education (Open video platform resource-sharing model—as an AI skills training platform)
 A platform that provides free educational content on AI tools, automation, or digital workflows could align with LDPC in the following ways:
 
 Remove unnecessary access barriers
@@ -10,7 +10,7 @@ Do not imply any employment outcomes
 Use Case 2: Agent-oriented Workflows
 Teach individuals how to:
 
-Coordinate AI tools
+## Coordinate AI tools
 Design agent (Agent) workflows
 Apply AI to engineering and non-engineering roles
 Use AI to create added value (at the application level)
@@ -19,7 +19,7 @@ The introspection, critical thinking, responsibility/risk-taking, integration, d
 Job role introductions needed in the AI era (including descriptions of tasks and responsibilities)
 This can reduce friction in transition, but does not redefine the job market.
 
-Use Case 3: Psychological Stabilization
+## Use Case 3: Psychological Stabilization
 Content covering topics such as:
 
 Identity shock after being replaced
