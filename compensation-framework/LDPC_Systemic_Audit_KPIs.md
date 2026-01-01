@@ -44,4 +44,17 @@ Audits exist to:
 
 ---
 
+## 6.Additional Financial Stability Indicators
+
+- **Debt Service Continuity Rate (DSCR-lite):**
+  Percentage of participants maintaining minimum debt payments.
+
+- **Early Delinquency Signal:**
+  Aggregated increase in 30–60 day delinquency risk within high-transition-risk cohorts.
+
+These indicators are evaluated only at aggregate level
+and are used solely to assess systemic stress,
+not individual creditworthiness.
+
+
 **End of KPIs**
