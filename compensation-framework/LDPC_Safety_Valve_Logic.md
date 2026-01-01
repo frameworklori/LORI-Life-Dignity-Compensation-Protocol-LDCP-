@@ -44,7 +44,7 @@ Triggers are based on **system performance**, not individual behavior.
 
 ---
 
-6.Priority Reallocation Rule
+# 6.Priority Reallocation Rule
 
 When Safety Valve conditions are triggered:
 
