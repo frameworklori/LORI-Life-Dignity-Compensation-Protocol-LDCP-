@@ -1,4 +1,4 @@
-LDPC Use Cases (Non-exhaustive List)
+## LDPC Use Cases (Non-exhaustive List)
 
 Use Case 1: Open AI Skills Education (Open video platform resource-sharing model—as an AI skills training platform)
 A platform that provides free educational content on AI tools, automation, or digital workflows could align with LDPC in the following ways:
