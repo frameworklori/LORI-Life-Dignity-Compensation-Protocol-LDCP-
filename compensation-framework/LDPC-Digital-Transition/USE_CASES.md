@@ -27,7 +27,7 @@ Anxiety over skill devaluation
 Uncertainty during the transition period
 These are viewed as normal reactions to systemic change, rather than personal failure.
 
-Use Case 4: Independent Transition Paths
+## Use Case 4: Independent Transition Paths
 LDPC supports:
 
 Experimentation and exploration in freelancing
