@@ -58,19 +58,6 @@ LDPC provides **design boundaries and options**, not directives.
 
 All responsibilities associated with any adoption or implementation of concepts derived from LDPC rest entirely with the implementing parties.
 
-5.## Clarification on UBI-Stable
-
-Any reference to "UBI-Stable" within the LDPC framework refers to a **non-redistributive financial stability mechanism**, not a universal income guarantee or social welfare claim.
-
-UBI-Stable is defined strictly as:
-- a low-level,
-- fixed,
-- non-means-tested liquidity floor,
-
-designed to prevent systemic default cascades during transition shocks.
-
-It does not constitute income replacement, employment entitlement, or social policy advocacy.
-
 Specifically:
 
 - **Decision Authority**  
@@ -135,6 +122,21 @@ Adoption is entirely voluntary and context-dependent.
 > It outlines survivable options.  
 >  
 > Responsibility begins only where voluntary adoption occurs.
+>
+
+## Clarification on UBI-Stable
+
+Any reference to "UBI-Stable" within the LDPC framework refers to a **non-redistributive financial stability mechanism**, not a universal income guarantee or social welfare claim.
+
+UBI-Stable is defined strictly as:
+- a low-level,
+- fixed,
+- non-means-tested liquidity floor,
+
+designed to prevent systemic default cascades during transition shocks.
+
+It does not constitute income replacement, employment entitlement, or social policy advocacy.
+
 
 ---
 
