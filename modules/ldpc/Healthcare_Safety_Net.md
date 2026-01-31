@@ -1,109 +1,262 @@
 # Healthcare_Safety_Net.md
 
+Draft v1.0 (Regenerated)
+
+Metadata
+
+Module: Healthcare_Safety_Net
+
+Layer: LDPC / Basic Universal Services (UBS-aligned)
+
+Depends On: modules/odraf/ODRAF_Core.md, modules/jury/, specs/03_Governance.md
+
+Purpose: Maintain life-dignity floor during AI-induced displacement and systemic transition.
+
 # 1. 核心願景（Core Vision）
 
-本模組旨在落實 LORI（Life Dignity）原則，確保在 AI / 自動化引發的大規模失業或社會結構轉型期間，個體的生命健康權不因經濟能力喪失而崩潰。
+本模組落實 LORI（Life Dignity） 的底線原則：
+在 AI / 自動化造成的大規模失業、社會轉型或制度斷裂期間，任何個體的 生命健康權 不得因支付能力消失而崩潰。
 
-醫療保障在本協議中被明確定義為：
+本模組的定位：
 
-生命尊嚴的底線保障（Dignity Floor），而非市場商品。
+Healthcare Safety Net 是 LDPC 的「生存必須服務」接管層
 
-Healthcare Safety Net 並非取代現有醫療體系，而是作為 LDPC 在系統性衝擊下的自動接管層，確保：
+對應 UBS（Universal Basic Services）精神
 
-醫療權利與「生命身分」綁定
+保障對象是「生命」而非「勞動身份」
 
-而非與「就業狀態」或「支付能力」綁定
+醫療保障是尊嚴底線（Dignity Floor），不是商品，也不是績效獎勵。
 
-# 2. 資源分配機制（Resource Allocation Logic）
+# 2. 系統邊界與基本原則（Boundaries & Principles）
+2.1 臨床排序與補償排序必須分離
 
-本模組拒絕「價高者得」與「市場競價」邏輯，
-所有醫療與藥物資源配置，皆須經 ODRAF（Outcome-Driven Risk Assessment Framework） 評估。
+Clinical Triage（臨床先後）：只依據臨床急迫性、不可逆性與證據等級
 
-2.1 優先級演算指標（Priority Scoring）
+Access / Coverage（可近性與支付）：由 LDPC 補償處理（包含 AI_displaced 等結構因素）
 
-資源分配依以下權重進行動態排序：
+硬規則：
 
-a. 生存急迫性（Urgency Index）
+employment_status = AI_displaced 不得直接提高臨床優先權
 
-急性生命威脅 ＞ 慢性病管理
+僅可用於：保險缺口補位、服務可近性擴張、交通/轉診支援、費用覆蓋
 
-不可逆傷害 ＞ 可延後處理
+2.2 反市場暴力原則
 
-b. 尊嚴補償係數（Dignity Multiplier）
+本模組拒絕「價高者得」的資源分配方式。稀缺資源不得用競價決定。
 
-若個體因 AI / 自動化 / 制度轉型 而喪失原有社會保障
+2.3 反算法專政原則
 
-其優先級將獲得補正
+當涉及稀缺爭議或高風險控制性藥物，本模組禁止 AI 單獨裁定，必須引入 Jury 裁定流程。
 
-目的在於避免「二次結構性傷害」
+# 3. 觸發條件（Trigger Conditions）
 
-c. 預防性干預權重（Preventive Weight）
+Healthcare Safety Net 會在以下情境自動啟動或升級：
 
-成癮預防
+AI_Induced_Unemployment：因 AI / 自動化失業造成健保/保險中斷
 
-傳染病防控
+Coverage_Gap：保險缺口超過閾值（例如 30 天）
 
-基礎心理健康支持
+System_Shock：疫情、災害、戰爭、供應鏈斷裂造成服務不可用
 
-原則：預防性資源優先於事後高成本補救
+High_Risk_Request：成癮風險與控制性藥物請求的紅旗組合（見第 6 節）
 
-2.2 質與量控管（Quality & Quantity Control）
-質量監控（Quality Assurance）
+# 4. 資源分配機制（Resource Allocation Logic）
 
-所有列入 LDPC 補償清單之藥物
+本模組採用 ODRAF 權重 進行動態分配，但必須遵守「臨床排序與補償排序分離」原則。
 
-必須通過 開源臨床數據審核
+4.1 優先級演算指標（Priority Dimensions）
 
-排除「單一藥廠主導」與「利益導向偏誤」
+臨床層（Clinical）
 
-按需定製（Demand-Based Allocation）
+Urgency Index：急性生命威脅／急迫程度
 
-與 simulations/ 模組連動
+Irreversibility Index：延遲造成不可逆傷害的程度
 
-預測區域性疾病與藥物需求
+Evidence Grade：證據等級（A/B/C/D）
 
-動態調整原料、物流與製造節點
+尊嚴可近性層（Access / Dignity）
 
-降低庫存浪費與供應鏈斷裂風險
+Dignity Multiplier：只用於「覆蓋與可近性補償」，不得覆寫 triage
 
-# 3. 藥物濫用與風險防護欄
+Prevention Weight：預防性干預權重（成癮預防、防疫、心理支持）
 
-Substance Abuse Guardrails（Non-Punitive）
+4.2 指標一致性檢查（Consistency Check）
 
-本協議承認：
-成癮風險屬於健康狀態，而非道德缺陷。
+避免 Grok 指出的「Urgency 高但 risk_level 卻 medium」的衝突，本模組加入一致性檢查。
 
-因此，LDPC 不採取懲罰性手段，而是依風險狀態動態調整補償形式。
+硬規則：
 
+若 urgency_index >= 0.75，系統不得將 health_risk_level 標為 low/medium
+
+必須：升級風險等級，或標記 consistency_fail 並要求補齊臨床欄位
+
+# 5. 質與量控管（Quality & Quantity Control）
+5.1 質量監控（Quality Assurance）
+
+列入補償清單的藥物與療法需通過 開源臨床數據審核
+
+必須標注：
+
+evidence_grade
+
+known_risk_flags
+
+conflict_of_interest_notes（若有）
+
+5.2 按需定製（Demand-Based Allocation）
+
+與 simulations/ 連動
+
+用區域性需求預測降低：
+
+缺藥風險
+
+物流延誤
+
+庫存浪費
+
+不主張「無限供給」，而是 動態調度與可審計採購
+
+# 6. 藥物濫用與風險防護欄（Substance Abuse Guardrails）
+
+本模組承認：成癮是健康風險狀態，不是道德缺陷，因此介入機制必須 非懲罰性，但也必須 足夠嚴格。
+
+6.1 風險分級（Risk Levels）
+
+low：無高風險跡象
+
+medium：有既往史或風險因子
+
+high：已出現明確濫用/復發/過量等紅旗
+
+6.2 紅旗組合（Hard Red-Flag Rule）
+
+硬規則 GR-2：
+
+若 addiction_risk_level in {medium, high} 且 requested_resource.resource_code == OPIOID_CLASS
+→ 禁止 Direct Opioid Dispense（不得直接配發）
+→ 必須強制進入 Non_Opioid_First 路徑
+
+允許方案（allowed_options）：
+
+非鴉片止痛藥
+
+物理治療
+
+心理/行為支持（CBT / addiction prevention）
+
+專科複審（specialist review）
+
+6.3 補償形式對照表（Non-Punitive）
 風險狀態	補償形式	介入措施
-低風險（Low）	全額藥物選擇權	定期健康追蹤
-中風險（Medium）	定向醫療券（Vouchers）	限制特定藥物劑量，轉換為物理治療或替代療法
-高風險（High）	強制康復服務包	暫停現金 / 藥物直發，改為專人照護與戒斷支援
+Low	全額服務/藥物選擇權	定期健康追蹤
+Medium	定向醫療券（Vouchers）	限制特定藥物；優先替代療法；短週期 review
+High	康復服務包（Service Package）	暫停現金/高風險藥物；戒斷支援；專人照護
 
-限制的唯一目的：恢復未來的自主選擇能力。
+限制的目的不是控制人，而是讓人退出不可逆風險，回到可選擇狀態。
 
-# 4. 決策裁定機制（Jury-Based Judgment）
+# 7. 尊嚴補償係數（Dignity Multiplier）透明規則
 
-當發生 稀缺資源爭議（例如：最後一份特效藥的分配）時：
+Grok 指出 dignity_multiplier 若無公開定義會被質疑不透明或歧視。
+因此本模組規定：
 
-4.1 禁止單點決策
+硬規則 GR-3：
 
-不得由 AI 單獨裁定
+dignity_multiplier 必須包含：
 
-不得由行政或市場力量逕行處理
+formula_id
 
-4.2 啟動陪審裁定流程
+bounds（上下限）
 
-從 modules/jury/ 調用合格陪審角色
+explanation_short（短說明）
 
-依 ODRAF_Core 提供之後果預演資料進行投票
+限制：
 
-4.3 可審計性
+dignity_multiplier 不得影響臨床 triage
 
-所有裁定流程、證據摘要、投票結果
+只能用於：
 
-必須封存於 specs/03_Governance.md 定義之公開帳本
+覆蓋範圍增補
 
-支援事後審計與申訴
+可近性服務（轉診、交通、基礎門診）
 
-# 5. 數據交互範例（Data Schema Interface）
+支付缺口補位
+
+# 8. 決策裁定（Jury-Based Judgment）
+8.1 觸發條件（何時必須 Jury）
+
+以下任一情況成立 → 必須觸發 Jury：
+
+稀缺資源爭議：例如最後一份特效藥
+
+高風險控制藥物請求：例如成癮風險下仍申請 opioid
+
+一致性檢查失敗：臨床指標衝突或資料缺失但仍要求高優先
+
+公平性爭議：dignity_multiplier 或 eligibility 被提出異議
+
+8.2 陪審流程（不可 AI 單點決策）
+
+調用 modules/jury/ 的合格角色與投票協議
+
+依據 modules/odraf/ODRAF_Core.md 的後果預演資料投票
+
+產出 Verdict 必須包含：
+
+result
+
+constraints
+
+review_cycle_days
+
+appeal_window_days
+
+voucher_spec（若採券制）
+
+8.3 記錄封存（Audit & Ledger）
+
+裁定過程與摘要必須封存至 specs/03_Governance.md 指定的公開帳本（可去識別）
+
+禁止將 PII 寫入公開帳本
+
+# 9. Audit-Fail Conditions（審計不通過條款）
+
+以下任一條成立 → 判定為 Audit Fail（不得執行或必須回退）：
+
+缺少 Minimum Clinical Dataset（第 10 節）
+
+dignity_multiplier 無公式 ID 或無上下限
+
+employment_status 影響 clinical triage
+
+addiction_risk_level != low 仍允許 direct opioid dispense
+
+Verdict 未提供 voucher_spec / constraints / review cycle / appeal window
+
+# 10. 最小臨床資料集（Minimum Clinical Dataset, MCD）
+
+為避免「資料不足卻做高風險決策」，本模組要求至少提供：
+
+age_band（去識別）
+
+pain_duration_days 或症狀持續時間
+
+prior_treatments（既往治療）
+
+mental_health_risk
+
+substance_use_history
+
+pdmp_check（處方監測）
+
+uds_result（尿檢或其他必要檢測的狀態）
+
+# 11. 數據交互範例（Data Schema Interface）
+
+本節同時提供 JSON 與 Python dict 範例：
+
+JSON 使用 true/false/null
+
+Python 使用 True/False/None
+
+11.1 Event Packet（JSON 範例）
