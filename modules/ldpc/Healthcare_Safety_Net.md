@@ -269,6 +269,7 @@ Jury case packet
 
 # A.1 Healthcare Safety Net — Event Packet (JSON)
 
+ ```json
 {
   "module": "Healthcare_Safety_Net",
   "version": "v1.0",
@@ -391,6 +392,8 @@ Jury case packet
     "anonymization_level": "high"
   }
 }
+
+ ```
 
 -----
 
