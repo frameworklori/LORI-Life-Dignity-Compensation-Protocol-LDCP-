@@ -272,7 +272,7 @@ Jury case packet
  ```json
 {
   "module": "Healthcare_Safety_Net",
-  "version": "v1.0",
+  "version": "v1.0-rev1",
   "status": "Active",
   "trigger_condition": "AI_Induced_Unemployment",
   "safety_net_tier": "Basic_Universal_Services",
@@ -329,8 +329,8 @@ Jury case packet
       "access_compensation_score": 0.63,
       "dignity_multiplier": 1.3,
       "dignity_multiplier_formula_id": "LDPC-DM-001",
-      "dignity_multiplier_bounds": [1.0, 1.35],
-      "explanation_short": "AI displacement affects access and coverage only, not clinical triage."
+      "dignity_multiplier_bounds_ref": "LDPC_CONFIG.DIGNITY_MULTIPLIER_MAX",
+      "explanation_short": "AI displacement affects access and coverage only, not clinical triage. Multiplier does not influence clinical_priority_score."
     }
   },
 
@@ -377,7 +377,10 @@ Jury case packet
     },
     "constraints": {
       "review_cycle_days": 14,
-      "mandatory_support": true
+      "mandatory_support": {
+        "type": "Behavioral_Support",
+        "description": "Mandatory psychological or counseling intervention during high-risk period"
+      }
     },
     "appeal": {
       "allowed": true,
@@ -397,17 +400,16 @@ Jury case packet
 
 -----
 
-## .2 Design Notes（文件內註解，非 JSON）
+## A.2 補充說明（Design Clarifications）
 
-UDS = pending
-→ 系統進入暫停驗證狀態，不得直接發放控制性藥物
+mandatory_support
+已改為結構化物件，明確指定為 Behavioral / Psychological Support，
+避免下游誤解為行政或懲罰性措施。
 
-addiction_risk_level = medium + opioid request
-→ 強制 Non-Opioid First 路徑（GR-2 / GR-5）
+dignity_multiplier_bounds_ref
+已移除硬編碼數值，改為引用設定常數，
+方便未來在不動事件格式的情況下調整上限。
 
-AI_displaced
-→ 僅影響 access / coverage，不影響 clinical triage
-
-Jury 必須介入
-→ 控制性藥物 × 中高風險 × 資源治理層級
-
+explanation_short
+Multiplier does not influence clinical_priority_score
+防止任何「尊嚴插隊醫療」的誤用或政治化指控。
