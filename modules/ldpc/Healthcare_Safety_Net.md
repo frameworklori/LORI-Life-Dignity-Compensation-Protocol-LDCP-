@@ -1,4 +1,4 @@
-# Healthcare_Safety_Net.md
+# Healthcare_Safety_Net
 
 Draft v1.0 (Regenerated)
 
@@ -251,12 +251,160 @@ pdmp_check（處方監測）
 
 uds_result（尿檢或其他必要檢測的狀態）
 
-# 11. 數據交互範例（Data Schema Interface）
+## 11. 數據交互範例（Data Schema Interface）
 
-本節同時提供 JSON 與 Python dict 範例：
+本事件封包為 Healthcare Safety Net 在
+AI 誘發失業 × 成癮風險 × 控制性藥物請求
+情境下的標準可審計輸出範例。
 
-JSON 使用 true/false/null
+本 JSON 為 嚴格格式（無註解），可直接用於：
 
-Python 使用 True/False/None
+schema 驗證
 
-11.1 Event Packet（JSON 範例）
+模擬（simulations/）
+
+ledger 封存
+
+Jury case packet
+
+A.1 Healthcare Safety Net — Event Packet (JSON)
+
+{
+  "module": "Healthcare_Safety_Net",
+  "version": "v1.0",
+  "status": "Active",
+  "trigger_condition": "AI_Induced_Unemployment",
+  "safety_net_tier": "Basic_Universal_Services",
+  "abuse_guardrail_active": true,
+
+  "user_profile": {
+    "user_id": "anon_7f92",
+    "region": "US-CA",
+    "employment_status": "AI_displaced",
+    "eligibility": {
+      "ldpc_covered": true,
+      "coverage_scope": "healthcare_access_only"
+    }
+  },
+
+  "minimum_clinical_dataset": {
+    "age_band": "26-30",
+    "pain_duration_days": 120,
+    "prior_treatments": [
+      "Nonsteroidal Anti-Inflammatory Drugs",
+      "Physical Therapy"
+    ],
+    "mental_health_risk": "medium",
+    "substance_use_history": "past",
+    "pdmp_check": "completed",
+    "uds_result": "pending"
+  },
+
+  "healthcare_request": {
+    "request_id": "HSN-REQ-2026-00031",
+    "condition": {
+      "type": "chronic_pain",
+      "severity_score": 0.61,
+      "urgency_index": 0.41,
+      "irreversibility_index": 0.22
+    },
+    "requested_resource": {
+      "category": "medication",
+      "resource_code": "OPIOID_CLASS",
+      "alternatives_available": true
+    }
+  },
+
+  "risk_flags": {
+    "addiction_risk_level": "medium",
+    "opioid_request_red_flag": true
+  },
+
+  "odraf_scoring": {
+    "odraf_profile_id": "ODRAF-HP-2026-1190",
+    "evidence_grade": "B",
+    "computed": {
+      "clinical_priority_score": 0.41,
+      "access_compensation_score": 0.63,
+      "dignity_multiplier": 1.3,
+      "dignity_multiplier_formula_id": "LDPC-DM-001",
+      "dignity_multiplier_bounds": [1.0, 1.35],
+      "explanation_short": "AI displacement affects access and coverage only, not clinical triage."
+    }
+  },
+
+  "guardrail_decision": {
+    "rule_hits": [
+      "GR-2_ADD_RISK_PLUS_OPIOID",
+      "GR-4_EMPLOYMENT_NOT_TRIAGE",
+      "GR-5_UDS_PENDING_HIGH_RISK"
+    ],
+    "forced_pathway": "Non_Opioid_First",
+    "allowed_options": [
+      "Non_Opioid_Medication",
+      "Physical_Therapy",
+      "Behavioral_Support",
+      "Specialist_Review"
+    ],
+    "disallowed_options": [
+      "Direct_Opioid_Dispense"
+    ],
+    "pending_conditions": [
+      {
+        "condition": "UDS_pending",
+        "action": "Hold_Verification",
+        "required_update": "uds_result must be positive, negative, or inconclusive before proceeding"
+      }
+    ]
+  },
+
+  "jury_trigger": {
+    "required": true,
+    "reason": "High_Risk_Controlled_Substance_Request",
+    "packet_id": "JURY-HSN-2026-0042"
+  },
+
+  "jury_verdict": {
+    "verdict_id": "VERDICT-2026-0042",
+    "result": "Non_Opioid_Voucher_Only",
+    "voucher_spec": {
+      "scope": [
+        "Physical_Therapy",
+        "Non_Opioid_Pain_Management"
+      ],
+      "opioid_allowed": false
+    },
+    "constraints": {
+      "review_cycle_days": 14,
+      "mandatory_support": true
+    },
+    "appeal": {
+      "allowed": true,
+      "window_days": 7,
+      "pause_review_during_appeal": true
+    }
+  },
+
+  "audit_record": {
+    "ledger_id": "HSN-LEDGER-2026-000884",
+    "pii_stored": false,
+    "anonymization_level": "high"
+  }
+}
+
+-----
+
+## .2 Design Notes（文件內註解，非 JSON）
+
+UDS = pending
+→ 系統進入暫停驗證狀態，不得直接發放控制性藥物
+
+addiction_risk_level = medium + opioid request
+→ 強制 Non-Opioid First 路徑（GR-2 / GR-5）
+
+AI_displaced
+→ 僅影響 access / coverage，不影響 clinical triage
+
+Jury 必須介入
+→ 控制性藥物 × 中高風險 × 資源治理層級
+
