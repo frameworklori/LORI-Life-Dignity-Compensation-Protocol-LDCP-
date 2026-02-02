@@ -1,5 +1,4 @@
-
-# ODRAF Core — Draft v1.1 (Kindness Boundary Integrated)
+# ODRAF Core — Draft v1.0 (Repo-ready)
 
 Metadata
 
@@ -11,249 +10,239 @@ Layer: Decision Support / Logic Calculation
 
 Primary Consumers: modules/ldpc/Healthcare_Safety_Net.md, modules/jury/
 
-Purpose: 量化風險並引入「善良邊界」機制，防止濫用、維持系統可持續性，同時保障程序正義。
+Purpose: 將定性「風險」量化為可計算、可審核、可封存的權重與熔斷規則。
 
-# 0. 核心原則（Non-Negotiables）
+## 0. 定義與範圍（Definitions & Scope）
 
-Clinical Primacy：救命優先，尊嚴不得插隊臨床 triage
+本文件定義 ODRAF 在 LDPC / Healthcare_Safety_Net 情境下的權重結構，用於：
 
-Non-Punitive：不以求助次數「懲罰」患者；邊界只限制高風險資源的形式與強度
+產出 Risk Score / Priority Score
 
-Accountable & Appealable：任何邊界觸發都必須可解釋、可上訴、可由 Jury 覆核
+觸發 Hard Constraints（熔斷） → 強制 Jury
 
-Support-First：邊界的目的不是拒絕，而是把支援形式從「高風險資源」轉為「可持續支持」
+生成可審計的 scoring trace（計算足跡）
+
+重要邊界：
+
+Clinical Triage（臨床救治先後）不受「尊嚴乘數」直接覆寫
+
+AI_displaced 僅能影響 Access / Coverage，不得影響臨床 triage（與 Healthcare_Safety_Net 的 GR-4 一致）
 
 ## 1. 權重架構總覽（Weighting Framework）
 
+ODRAF 最終風險得分由三個維度構成：
 
-Total_Risk=(Clinical_Impact×α)+(Systemic_Risk×β)+(Dignity_Erosion×γ
-dynamic)
+𝑇
+𝑜
+𝑡
+𝑎
+𝑙
+_
+𝑅
+𝑖
+𝑠
+𝑘
+=
+(
+𝐶
+𝑙
+𝑖
+𝑛
+𝑖
+𝑐
+𝑎
+𝑙
+_
+𝐼
+𝑚
+𝑝
+𝑎
+𝑐
+𝑡
+×
+𝛼
+)
++
+(
+𝑆
+𝑦
+𝑠
+𝑡
+𝑒
+𝑚
+𝑖
+𝑐
+_
+𝑅
+𝑖
+𝑠
+𝑘
+×
+𝛽
+)
++
+(
+𝐷
+𝑖
+𝑔
+𝑛
+𝑖
+𝑡
+𝑦
+_
+𝐸
+𝑟
+𝑜
+𝑠
+𝑖
+𝑜
+𝑛
+×
+𝛾
+)
+Total_Risk=(Clinical_Impact×α)+(Systemic_Risk×β)+(Dignity_Erosion×γ)
 
 𝛼
 +
 𝛽
 +
 𝛾
-𝑑
-𝑦
-𝑛
-𝑎
-𝑚
-𝑖
-𝑐
 =
 1.0
-α+β+γ
-dynamic
-=1.0
+α+β+γ=1.0
 
+1.1 預設係數（Default Coefficients）
 
-## 1.1 預設係數（Baseline Coefficients）
-
-α (Clinical): 0.45
+α (Clinical): 0.50
 
 β (Systemic): 0.30
 
-γ (Dignity): 0.25 (baseline)
+γ (Dignity): 0.20
 
-說明：比 v1.0 略提高尊嚴權重，但仍維持臨床與系統風險優先的治理結構。
+設計理由：在醫療與生命風險場景下，臨床救治優先是制度底線；系統性風險（濫用/稀缺）次之；尊嚴侵蝕用於「補償形式與可近性」的治理修正，而非 triage 插隊。
 
 ## 2. 維度一：臨床與物理損害（Clinical Impact — α）
-Metric	Weight (within α)
-Urgency	0.40
-Irreversibility	0.35
-Evidence Grade	0.25
 
-Evidence Grade mapping (default): A=1.0, B=0.8, C=0.5, D=0.2
+衡量對個體生理健康的直接損害。
 
+Metric	Weight (within α)	Definition
+Urgency（急迫性）	0.40	延遲處理是否造成立即生命危險
+Irreversibility（不可逆性）	0.35	損害是否永久（殘疾、不可逆神經損傷等）
+Evidence Grade（證據等級）	0.25	A=1.0, B=0.8, C=0.5, D=0.2（可由 config 調整）
 ## 3. 維度二：系統性風險（Systemic Risk — β）
-Metric	Weight (within β)
-Abuse Potential	0.50
-Resource Scarcity	0.30
-Systemic Cost	0.20
-## 4. 維度三：尊嚴侵蝕度（Dignity Erosion — γ_dynamic）
-Metric	Weight (within γ)
-Autonomy Loss	0.40
-Vulnerability Index	0.40
-Social Stigma	0.20
 
-注意：Social Stigma 權重維持 0.20（不建議任意提高），因為污名化是治理風險，但不可取代臨床救治。
+衡量決策對社會系統、供應鏈與群體風險的外溢影響，特別對應：
+
+藥物濫用（如 opioid）
+
+稀缺資源（庫存、產能、物流）
+
+長期公共成本
+
+Metric	Weight (within β)	Definition
+Abuse Potential（濫用/成癮潛力）	0.50	轉售、誤用、誘發流行性成癮風險
+Resource Scarcity（稀缺度）	0.30	庫存/需求比 + 供應鏈可用性
+Systemic Cost（系統成本）	0.20	長期公共資源消耗（醫療、治安、社會成本）
+## 4. 維度三：尊嚴侵蝕度（Dignity Erosion — γ）
+
+反映 LORI 原創精神：衡量「不作為」或「錯誤介入」對人的尊嚴傷害。
+
+Metric	Weight (within γ)	Definition
+Autonomy Loss（自主權喪失）	0.40	是否缺乏上訴/解釋/替代方案（程序正義）
+Vulnerability Index（脆弱性）	0.40	失業、無健保、照護者責任、居住不穩等
+Social Stigma（烙印風險）	0.20	介入是否導致污名化或歧視性標籤
+
+限制條款（與 Healthcare_Safety_Net 一致）：
+Dignity Erosion 不得直接攔截臨床救治，只能：
+
+影響補償形式（voucher / transport / care coordination）
+
+影響 review 週期與支援強度（mandatory_support 等）
 
 ## 5. 硬性約束規則（Hard Constraint Rules / Fuse）
-OR-1：Opioid Red-Flag
 
-Condition: resource_code == OPIOID_CLASS AND Abuse_Potential > 0.70
+ODRAF 設置熔斷機制，避免權重計算被「平均化」而失真。
 
-Outcome: Total_Risk = CRITICAL + 強制 Jury + 禁止 direct dispense
+OR-1：Opioid Red-Flag（鴉片類紅旗）
 
-CP-1：Clinical Primacy
+Condition
 
-Condition: Urgency > 0.80
+requested_resource.resource_code == "OPIOID_CLASS" AND Abuse_Potential > 0.70
 
-Outcome: 臨床救治優先；尊嚴只影響 access/support，不得攔截救命流程
+Outcome
 
-VD-1：Verification Hold
+Total_Risk = CRITICAL
 
-Condition: uds_result == pending AND addiction_risk ≥ medium AND opioid request
+強制觸發 modules/jury/
 
-Outcome: Hold_Verification + Non_Opioid_First + Specialist Review required
+並與 Healthcare_Safety_Net 的 GR-2_ADD_RISK_PLUS_OPIOID 對齊（禁止 direct dispense）
 
-## 6. 權重動態調整（Dynamic Adjustment）
-## 6.1 Scarcity Traffic Light（沿用三色燈）
+CP-1：Clinical Primacy（臨床優先原則）
 
-Green: inventory_ratio ≥ 0.30 → normal
+Condition
 
-Yellow: 0.10–0.30 → scarcity weight × 1.5
+Urgency > 0.80
 
-Red: <0.10 → scarcity weight × 2.0 (+可觸發 Jury 視資源類型)
+Outcome
 
-## 6.2 善良邊界（Kindness Boundary）— 可辯護版本
+系統必須優先撥付臨床救治資源
 
-Grok 的直覺是對的：善良若無邊界會造成濫用與系統崩壞。
-但「只看 request_count」會在醫療倫理上被攻擊，因此本框架採用：
+Dignity Erosion 僅能影響「可近性補償」與「流程支援」
+（例如：轉診交通、快速排程、住院協調），不得阻斷救命流程
 
-γ_dynamic 的調整依據：合規（compliance）× 風險改善（improvement）× 是否屬於高風險資源（controlled resource）
-而不是單純求助次數。
+VD-1：Verification Hold（驗證暫停）
 
-定義三個治理參數
+（對齊你 Healthcare_Safety_Net 的 uds_result: pending 設計）
 
-request_count：同類型請求次數（僅作參考，不作單獨懲罰）
+Condition
 
-compliance_rate：對 mandatory_support、review、檢測（如 UDS/PDMP）的遵守率（0–1）
+uds_result == "pending" AND addiction_risk_level in {"medium","high"} AND requested_resource == "OPIOID_CLASS"
 
-risk_trend：風險趨勢（improving / stable / worsening）
+Outcome
 
-γ_dynamic 設計（核心）
+強制 Hold_Verification
 
-γ_base = 0.50（首次高同理）
+只能走 Non_Opioid_First 或 Specialist Review
 
-γ_min = 0.20（最低尊嚴底線）
+直到 uds_result ∈ {positive, negative, inconclusive}
 
-當且僅當「高風險資源」情境成立（例如 opioid / controlled substances），才啟動邊界衰減：
+## 6. 稀缺敏感度：建議採用「三色燈」而非單一 10% 觸發
 
-𝛾
-𝑑
-𝑦
-𝑛
-𝑎
-𝑚
-𝑖
-𝑐
-=
-𝑐
-𝑙
-𝑎
-𝑚
-𝑝
-(
-𝛾
-𝑚
-𝑖
-𝑛
-,
- 
-𝛾
-𝑏
-𝑎
-𝑠
-𝑒
-×
-(
-1
-−
-𝑑
-)
-,
- 
-𝛾
-𝑏
-𝑎
-𝑠
-𝑒
-)
-γ
-dynamic
-	​
+Gemini 目前提議「庫存低於 10% 權重翻倍」是好起點，但單點閾值容易被批評為：
 
-=clamp(γ
-min
-	​
+太粗糙
 
-, γ
-base
-	​
+太容易被操控（把庫存維持在 11% 就避開規則）
 
-×(1−d), γ
-base
-	​
+建議：Scarcity Traffic Light（STL）
 
-)
+Green: inventory_ratio ≥ 0.30 → 正常權重
 
-其中衰減 
-𝑑
-d 定義為：
+Yellow: 0.10 ≤ inventory_ratio < 0.30 → Scarcity weight × 1.5
 
-若 compliance_rate >= 0.80 且 risk_trend == improving → d = 0.00（不衰減）
+Red: inventory_ratio < 0.10 → Scarcity weight × 2.0 + 可觸發 Jury（視資源類型）
 
-若 compliance_rate < 0.80 或 risk_trend != improving →
+你問「夠不夠敏感」：
+我會選 三色燈，因為它更像制度（而不是單一數字魔法）。
 
-𝑑
-=
-𝑚
-𝑖
-𝑛
-(
-0.30
-,
- 
-0.10
-×
-𝑚
-𝑎
-𝑥
-(
-0
-,
-𝑟
-𝑒
-𝑞
-𝑢
-𝑒
-𝑠
-𝑡
-_
-𝑐
-𝑜
-𝑢
-𝑛
-𝑡
-−
-1
-)
-)
-d=min(0.30, 0.10×max(0,request_count−1))
+## 7. 權重動態調整（Dynamic Adjustment）
 
-解釋：
+當偵測到 System_Shock（供應鏈崩潰、災害、疫情）：
 
-有配合、有改善 → 不削尊嚴權重
+Resource_Scarcity 權重（within β）從 0.30 → 0.60
 
-不配合、又反覆高風險請求 → 邊界逐步收緊
+Systemic_Cost 影響下降（避免在緊急期過度計算長期成本）
 
-但永遠不低於 γ_min，避免把人踢出系統
+同時啟用 Scarcity Traffic Light 的 Red 模式 作為預設
 
-## 7. 新增硬性邊界觸發（Boundary Trigger, BT-1）
-BT-1：Dependency Warning & Mode Shift（依賴警告與模式切換）
+## 8. 計算足跡與可審計性（Scoring Trace & Auditability）
 
-Condition: request_count > 3 AND compliance_rate < 0.80 AND controlled_resource_request == true
+每次 ODRAF 計算必須輸出：
 
-Outcome:
+係數（α/β/γ）
 
-降低 γ_dynamic（依 6.2）
+每個 metric 的原值、正規化值、權重
 
-強制模式切換：Medication_Voucher → Support_Package（以支持包替代高風險資源）
+觸發的 fuse 規則（OR-1 / CP-1 / VD-1）
 
-通知使用者：「邊界警告：持續依賴會降低未來高風險資源可得性」
-
-必須允許上訴並可由 Jury 覆核
-
-## 8. JSON Snippet（Interface）
+最終建議（recommendation）與允許選項集合（allowed set）
