@@ -23,7 +23,7 @@ Accountable & Appealable：任何邊界觸發都必須可解釋、可上訴、�
 
 Support-First：邊界的目的不是拒絕，而是把支援形式從「高風險資源」轉為「可持續支持」
 
-1. 權重架構總覽（Weighting Framework）
+## 1. 權重架構總覽（Weighting Framework）
 
 
 Total_Risk=(Clinical_Impact×α)+(Systemic_Risk×β)+(Dignity_Erosion×γ
@@ -48,9 +48,7 @@ dynamic
 =1.0
 
 
-
-
-1.1 預設係數（Baseline Coefficients）
+## 1.1 預設係數（Baseline Coefficients）
 
 α (Clinical): 0.45
 
@@ -60,7 +58,7 @@ dynamic
 
 說明：比 v1.0 略提高尊嚴權重，但仍維持臨床與系統風險優先的治理結構。
 
-2. 維度一：臨床與物理損害（Clinical Impact — α）
+## 2. 維度一：臨床與物理損害（Clinical Impact — α）
 Metric	Weight (within α)
 Urgency	0.40
 Irreversibility	0.35
@@ -68,12 +66,12 @@ Evidence Grade	0.25
 
 Evidence Grade mapping (default): A=1.0, B=0.8, C=0.5, D=0.2
 
-3. 維度二：系統性風險（Systemic Risk — β）
+## 3. 維度二：系統性風險（Systemic Risk — β）
 Metric	Weight (within β)
 Abuse Potential	0.50
 Resource Scarcity	0.30
 Systemic Cost	0.20
-4. 維度三：尊嚴侵蝕度（Dignity Erosion — γ_dynamic）
+## 4. 維度三：尊嚴侵蝕度（Dignity Erosion — γ_dynamic）
 Metric	Weight (within γ)
 Autonomy Loss	0.40
 Vulnerability Index	0.40
@@ -81,7 +79,7 @@ Social Stigma	0.20
 
 注意：Social Stigma 權重維持 0.20（不建議任意提高），因為污名化是治理風險，但不可取代臨床救治。
 
-5. 硬性約束規則（Hard Constraint Rules / Fuse）
+## 5. 硬性約束規則（Hard Constraint Rules / Fuse）
 OR-1：Opioid Red-Flag
 
 Condition: resource_code == OPIOID_CLASS AND Abuse_Potential > 0.70
@@ -100,8 +98,8 @@ Condition: uds_result == pending AND addiction_risk ≥ medium AND opioid reques
 
 Outcome: Hold_Verification + Non_Opioid_First + Specialist Review required
 
-6. 權重動態調整（Dynamic Adjustment）
-6.1 Scarcity Traffic Light（沿用三色燈）
+## 6. 權重動態調整（Dynamic Adjustment）
+## 6.1 Scarcity Traffic Light（沿用三色燈）
 
 Green: inventory_ratio ≥ 0.30 → normal
 
@@ -109,7 +107,7 @@ Yellow: 0.10–0.30 → scarcity weight × 1.5
 
 Red: <0.10 → scarcity weight × 2.0 (+可觸發 Jury 視資源類型)
 
-6.2 善良邊界（Kindness Boundary）— 可辯護版本
+## 6.2 善良邊界（Kindness Boundary）— 可辯護版本
 
 Grok 的直覺是對的：善良若無邊界會造成濫用與系統崩壞。
 但「只看 request_count」會在醫療倫理上被攻擊，因此本框架採用：
@@ -243,7 +241,7 @@ d=min(0.30, 0.10×max(0,request_count−1))
 
 但永遠不低於 γ_min，避免把人踢出系統
 
-7. 新增硬性邊界觸發（Boundary Trigger, BT-1）
+## 7. 新增硬性邊界觸發（Boundary Trigger, BT-1）
 BT-1：Dependency Warning & Mode Shift（依賴警告與模式切換）
 
 Condition: request_count > 3 AND compliance_rate < 0.80 AND controlled_resource_request == true
@@ -258,4 +256,4 @@ Outcome:
 
 必須允許上訴並可由 Jury 覆核
 
-8. JSON Snippet（Interface）
+## 8. JSON Snippet（Interface）
