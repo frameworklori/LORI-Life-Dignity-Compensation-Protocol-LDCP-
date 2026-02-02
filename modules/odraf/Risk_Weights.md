@@ -215,9 +215,13 @@ STL 以「分級警示」取代「單點觸發」，使稀缺判斷更具連續�
 
 6.1 三色燈分級定義（STL Levels）
 Level	Inventory Ratio	Scarcity Weight Adjustment	Governance Implication
+
 Green	≥ 0.30	× 1.0（正常）	常規分配；不需額外治理介入
+
 Yellow	0.10 ≤ ratio < 0.30	× 1.5	提高審慎度；縮短 review 週期；偏向替代方案
+
 Red	< 0.10	× 2.0	高度稀缺；可觸發 Jury（依資源類型）
+
 6.2 治理連動規則（Governance Coupling）
 
 Yellow 狀態
