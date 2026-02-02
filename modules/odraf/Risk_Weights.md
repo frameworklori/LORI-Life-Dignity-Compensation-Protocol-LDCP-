@@ -32,84 +32,9 @@ AI_displaced 僅能影響 Access / Coverage，不得影響臨床 triage（與 He
 
 ODRAF 最終風險得分由三個維度構成：
 
-𝑇
-𝑜
-𝑡
-𝑎
-𝑙
-_
-𝑅
-𝑖
-𝑠
-𝑘
-=
-(
-𝐶
-𝑙
-𝑖
-𝑛
-𝑖
-𝑐
-𝑎
-𝑙
-_
-𝐼
-𝑚
-𝑝
-𝑎
-𝑐
-𝑡
-×
-𝛼
-)
-+
-(
-𝑆
-𝑦
-𝑠
-𝑡
-𝑒
-𝑚
-𝑖
-𝑐
-_
-𝑅
-𝑖
-𝑠
-𝑘
-×
-𝛽
-)
-+
-(
-𝐷
-𝑖
-𝑔
-𝑛
-𝑖
-𝑡
-𝑦
-_
-𝐸
-𝑟
-𝑜
-𝑠
-𝑖
-𝑜
-𝑛
-×
-𝛾
-)
-Total_Risk=(Clinical_Impact×α)+(Systemic_Risk×β)+(Dignity_Erosion×γ)
+𝑇𝑜𝑡𝑎𝑙_𝑅𝑖𝑠𝑘=(𝐶𝑙𝑖𝑛𝑖𝑐𝑎𝑙_𝐼𝑚𝑝𝑎𝑐𝑡×𝛼)+(𝑆𝑦𝑠𝑡𝑒𝑚𝑖𝑐_𝑅𝑖𝑠𝑘×𝛽)+(𝐷𝑖𝑔𝑛𝑖𝑡𝑦_𝐸𝑟𝑜𝑠𝑖𝑜𝑛×𝛾)
 
-𝛼
-+
-𝛽
-+
-𝛾
-=
-1.0
-α+β+γ=1.0
+𝛼+𝛽+𝛾=1.0
 
 1.1 預設係數（Default Coefficients）
 
@@ -166,11 +91,9 @@ ODRAF 設置熔斷機制，避免權重計算被「平均化」而失真。
 OR-1：Opioid Red-Flag（鴉片類紅旗）
 
 Condition
-
 requested_resource.resource_code == "OPIOID_CLASS" AND Abuse_Potential > 0.70
 
 Outcome
-
 Total_Risk = CRITICAL
 
 強制觸發 modules/jury/
@@ -180,11 +103,9 @@ Total_Risk = CRITICAL
 CP-1：Clinical Primacy（臨床優先原則）
 
 Condition
-
 Urgency > 0.80
 
 Outcome
-
 系統必須優先撥付臨床救治資源
 
 Dignity Erosion 僅能影響「可近性補償」與「流程支援」
@@ -195,11 +116,9 @@ VD-1：Verification Hold（驗證暫停）
 （對齊你 Healthcare_Safety_Net 的 uds_result: pending 設計）
 
 Condition
-
 uds_result == "pending" AND addiction_risk_level in {"medium","high"} AND requested_resource == "OPIOID_CLASS"
 
 Outcome
-
 強制 Hold_Verification
 
 只能走 Non_Opioid_First 或 Specialist Review
@@ -221,8 +140,7 @@ Green	≥ 0.30	× 1.0（正常）	常規分配；不需額外治理介入
 Yellow	0.10 ≤ ratio < 0.30	× 1.5	提高審慎度；縮短 review 週期；偏向替代方案
 
 Red	< 0.10	× 2.0	高度稀缺；可觸發 Jury（依資源類型）
-
-'''text
+```json
 {
   "system_component": "ODRAF_Scarcity_Engine",
   "resource_id": "MED-OPIOID-082",
@@ -256,9 +174,8 @@ Red	< 0.10	× 2.0	高度稀缺；可觸發 Jury（依資源類型）
     "system_shock_active": false
   }
 }
-'''
------
-6.2 治理連動規則（Governance Coupling）
+
+## 6.2 治理連動規則（Governance Coupling）
 
 Yellow 狀態
 
@@ -325,7 +242,6 @@ Resource_Scarcity 權重（within β）從 0.30 → 0.60
 Systemic_Cost 影響下降（避免在緊急期過度計算長期成本）
 
 同時啟用 Scarcity Traffic Light 的 Red 模式 作為預設
-
 ## 8. 計算足跡與可審計性（Scoring Trace & Auditability）
 
 每次 ODRAF 計算必須輸出：
@@ -337,3 +253,4 @@ Systemic_Cost 影響下降（避免在緊急期過度計算長期成本）
 觸發的 fuse 規則（OR-1 / CP-1 / VD-1）
 
 最終建議（recommendation）與允許選項集合（allowed set）
+
