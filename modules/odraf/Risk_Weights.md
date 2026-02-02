@@ -174,6 +174,7 @@ Red	< 0.10	× 2.0	高度稀缺；可觸發 Jury（依資源類型）
     "system_shock_active": false
   }
 }
+```
 
 ## 6.2 治理連動規則（Governance Coupling）
 
