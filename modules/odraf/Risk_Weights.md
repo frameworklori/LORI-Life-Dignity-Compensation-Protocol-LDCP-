@@ -24,13 +24,10 @@ Accountable & Appealable：任何邊界觸發都必須可解釋、可上訴、�
 Support-First：邊界的目的不是拒絕，而是把支援形式從「高風險資源」轉為「可持續支持」
 
 1. 權重架構總覽（Weighting Framework）
-'''text
 
+''''text
 Total_Risk=(Clinical_Impact×α)+(Systemic_Risk×β)+(Dignity_Erosion×γ
-dynamic
-	​
-
-)
+dynamic)
 
 𝛼
 +
@@ -48,9 +45,9 @@ dynamic
 1.0
 α+β+γ
 dynamic
-''''	​
-
 =1.0
+''''
+
 
 
 1.1 預設係數（Baseline Coefficients）
