@@ -222,6 +222,42 @@ Yellow	0.10 ≤ ratio < 0.30	× 1.5	提高審慎度；縮短 review 週期；偏
 
 Red	< 0.10	× 2.0	高度稀缺；可觸發 Jury（依資源類型）
 
+'''text
+{
+  "system_component": "ODRAF_Scarcity_Engine",
+  "resource_id": "MED-OPIOID-082",
+  "monitoring_event": {
+    "timestamp": "2026-02-02T10:30:00Z",
+    "inventory_status": {
+      "current_stock": 45,
+      "estimated_demand_cycle": 500,
+      "inventory_ratio": 0.09,
+      "stl_status": "RED"
+    }
+  },
+  "weight_adjustment_logic": {
+    "base_scarcity_weight": 0.30,
+    "stl_multiplier": 2.0,
+    "final_adjusted_scarcity_weight": 0.60,
+    "reasoning": "Inventory ratio (0.09) dropped below RED threshold (0.10). Multiplier x2.0 applied to systemic_risk (beta)."
+  },
+  "governance_directives": {
+    "action_required": "MANDATORY_JURY_TRIGGER",
+    "pathway_restriction": "NON_SCARCE_PATHWAY_ONLY",
+    "allowed_alternatives": [
+      "Physical_Therapy_Voucher",
+      "Non_Opioid_Analgesics"
+    ],
+    "jury_packet_ref": "JURY-PKT-2026-RED-001"
+  },
+  "audit_trail": {
+    "previous_stl_status": "YELLOW",
+    "transition_timestamp": "2026-02-01T22:15:00Z",
+    "system_shock_active": false
+  }
+}
+'''
+-----
 6.2 治理連動規則（Governance Coupling）
 
 Yellow 狀態
