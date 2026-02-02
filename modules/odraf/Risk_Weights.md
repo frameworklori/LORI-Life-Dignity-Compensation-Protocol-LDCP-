@@ -206,24 +206,75 @@ Outcome
 
 直到 uds_result ∈ {positive, negative, inconclusive}
 
-## 6. 稀缺敏感度：建議採用「三色燈」而非單一 10% 觸發
+## 6. 稀缺敏感度（Scarcity Sensitivity）：三色燈警示系統（STL）
 
-Gemini 目前提議「庫存低於 10% 權重翻倍」是好起點，但單點閾值容易被批評為：
+為避免單一閾值（如「庫存低於 10%」）所造成的判斷粗糙化與策略性操控風險（例如刻意維持庫存於 11% 以規避規則），
+ODRAF 採用 Scarcity Traffic Light（STL） 作為標準稀缺監測與權重調整機制。
 
-太粗糙
+STL 以「分級警示」取代「單點觸發」，使稀缺判斷更具連續性、可預期性與可審計性。
 
-太容易被操控（把庫存維持在 11% 就避開規則）
+6.1 三色燈分級定義（STL Levels）
+Level	Inventory Ratio	Scarcity Weight Adjustment	Governance Implication
+Green	≥ 0.30	× 1.0（正常）	常規分配；不需額外治理介入
+Yellow	0.10 ≤ ratio < 0.30	× 1.5	提高審慎度；縮短 review 週期；偏向替代方案
+Red	< 0.10	× 2.0	高度稀缺；可觸發 Jury（依資源類型）
+6.2 治理連動規則（Governance Coupling）
 
-建議：Scarcity Traffic Light（STL）
+Yellow 狀態
 
-Green: inventory_ratio ≥ 0.30 → 正常權重
+不自動拒絕請求
 
-Yellow: 0.10 ≤ inventory_ratio < 0.30 → Scarcity weight × 1.5
+系統應：
 
-Red: inventory_ratio < 0.10 → Scarcity weight × 2.0 + 可觸發 Jury（視資源類型）
+優先推薦替代療法（Non-Opioid / Non-Scarce options）
 
-你問「夠不夠敏感」：
-我會選 三色燈，因為它更像制度（而不是單一數字魔法）。
+縮短 review_cycle_days
+
+提高透明度（需顯示稀缺原因）
+
+Red 狀態
+
+視資源屬性啟動強化治理：
+
+若屬於 控制性藥物 / 生命關鍵資源
+→ 可強制觸發 modules/jury/
+
+若屬於可替代資源
+→ 強制 Non-Scarce Pathway
+
+6.3 為何採用 STL 而非單一 10% 閾值
+
+STL 設計用以解決單點閾值的三個制度性缺陷：
+
+避免粗糙化（Over-simplification）
+真實世界的稀缺是連續變化，不是開/關二元。
+
+降低操控誘因（Anti-Gaming）
+分級區間使「卡邊界」策略失效。
+
+提升審計可解釋性（Auditability）
+Jury 與外部審核者可清楚理解：
+
+為何進入某一治理層級
+
+為何採取較嚴格或較寬鬆的措施
+
+6.4 與 ODRAF / LDPC / Jury 的一致性
+
+STL 僅影響 Systemic Risk（β） 中的 Resource_Scarcity 權重
+
+不得覆寫 Clinical Primacy（CP-1）
+
+不得單獨決定最終發放結果，僅能：
+
+提高治理層級
+
+觸發 Jury
+
+限縮可選方案集合（allowed set）
+
+換言之：
+STL 是警示燈，不是裁決者。
 
 ## 7. 權重動態調整（Dynamic Adjustment）
 
