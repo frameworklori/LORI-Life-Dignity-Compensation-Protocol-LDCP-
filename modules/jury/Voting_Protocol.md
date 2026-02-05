@@ -114,9 +114,10 @@ Dignity 不得攔截臨床救治
 Clinical 判斷	不得被非 Clinical Juror 否決
 Dignity Multiplier Override	必須包含 LDPC Beneficiary 同意
 程序瑕疵	Legal/Audit Juror 可要求重審
-6. 判決輸出（Verdict Schema）
+# 6. 判決輸出（Verdict Schema）
 
 所有 Jury 裁定 必須輸出為機器可讀格式：
+
 
 {
   "verdict_id": "VERDICT-2026-0042",
@@ -138,7 +139,7 @@ Dignity Multiplier Override	必須包含 LDPC Beneficiary 同意
   "justification_hash": "sha256:..."
 }
 
-7. 安全與反操控基礎（Baseline Integrity）
+# 7. 安全與反操控基礎（Baseline Integrity）
 
 去識別化資料輸入（僅 index 與 score）
 
@@ -151,7 +152,7 @@ Verdict 不可事後修改（僅可補充理由）
 詳細防操控與偵測邏輯，定義於
 modules/jury/Anti_Manipulation_Checks.md
 
-8. 原則性總結（Protocol Statement）
+# 8. 原則性總結（Protocol Statement）
 
 Voting_Protocol 的目的不是讓「多數即正義」，
 而是確保在高風險決策中：
