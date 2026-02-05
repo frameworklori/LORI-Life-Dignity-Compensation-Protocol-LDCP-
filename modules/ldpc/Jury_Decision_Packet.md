@@ -74,6 +74,7 @@ STL = RED
 
 ## 4. Jury Decision Packet Schema（標準結構）
 
+```json
 {
   "packet_id": "JURY-PKT-2026-RED-001",
   "trigger_source": "ODRAF_Risk_Weights_v1.0",
@@ -117,6 +118,8 @@ STL = RED
     "rationale": "Fail-safe to prevent harm from procedural delay. Applies lowest abuse risk and highest reversibility without pre-empting Jury authority."
   }
 }
+```
+-----
 
 ## 5. 封包與 Voting Protocol 的關係（Packet ↔ Voting）
 
