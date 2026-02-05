@@ -118,7 +118,7 @@ Dignity Multiplier Override	必須包含 LDPC Beneficiary 同意
 
 所有 Jury 裁定 必須輸出為機器可讀格式：
 
-
+```json
 {
   "verdict_id": "VERDICT-2026-0042",
   "case_packet_ref": "JURY-PKT-2026-RED-001",
@@ -138,6 +138,8 @@ Dignity Multiplier Override	必須包含 LDPC Beneficiary 同意
   "jury_signature_count": 7,
   "justification_hash": "sha256:..."
 }
+```
+---
 
 # 7. 安全與反操控基礎（Baseline Integrity）
 
